@@ -128,7 +128,6 @@ function WelcomeScreen({ onStart, lang, setLang }) {
 
 
 
-import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function getResultStyle(index) {
