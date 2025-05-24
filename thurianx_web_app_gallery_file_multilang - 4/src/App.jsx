@@ -114,8 +114,6 @@ function WelcomeScreen({ onStart, lang, setLang }) {
 }
 
 
-import { motion, AnimatePresence } from 'framer-motion';
-
 function getResultStyle(index) {
   switch (index) {
     case 0:
