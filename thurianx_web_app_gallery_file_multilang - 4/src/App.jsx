@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 function WelcomeScreen({ onStart, lang, setLang }) {
   const handleStart = () => {
-    const audio = new Audio('/Sia_-_Unstoppable_CeeNaija.com_.mp3');
+    const audio = new Audio('/Sia.mp3.mp3');
     audio.volume = 1.0;
     audio.play()
       .then(() => {
