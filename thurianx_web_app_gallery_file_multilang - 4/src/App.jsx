@@ -6,11 +6,19 @@ import { useEffect } from 'react';
 
 
 function WelcomeScreen({ onStart, lang, setLang }) {
-  useEffect(() => {
+  const handleStart = () => {
     const audio = new Audio('/Sia_-_Unstoppable_CeeNaija.com_.mp3');
-    audio.volume = 0.4;
-    audio.play().catch(() => {});
-  }, []);
+    audio.volume = 1.0;
+    audio.play()
+      .then(() => {
+        console.log('🎵 Audio started successfully');
+      })
+      .catch((error) => {
+        console.warn('⚠️ Audio play failed:', error);
+      });
+    onStart();
+  };
+  
   const headings = {
     TH: 'ระบบตรวจสอบระดับการสุกของทุเรียน ด้วย AI ที่เรียบง่าย งดงาม และแม่นยำ',
     EN: 'Detect Durian Ripeness with AI – Minimal, Elegant, and Precise.',
@@ -94,7 +102,7 @@ function WelcomeScreen({ onStart, lang, setLang }) {
       </motion.div>
 
       <motion.button
-        onClick={onStart}
+        onClick={handleStart}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
@@ -113,6 +121,15 @@ function WelcomeScreen({ onStart, lang, setLang }) {
   );
 }
 
+
+
+
+
+
+
+
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function getResultStyle(index) {
   switch (index) {
